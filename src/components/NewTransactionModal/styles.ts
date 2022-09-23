@@ -70,11 +70,11 @@ export const TransactionType = styled(RadioGroup.Root)`
   gap: 1rem;
   margin-top: 0.5rem;
 `
-interface TransactionTypeButtonProps {
+interface InOutProps {
   variant: 'income' | 'outcome'
 }
 
-export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(RadioGroup.Item)<InOutProps>`
   background: ${(props) => props.theme['gray-700']};
   padding: 1rem;
   display: flex;
