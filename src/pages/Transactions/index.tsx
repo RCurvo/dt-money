@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 import { SearchForm } from './SearchForm'
 import {
   PriceHighlight,
@@ -8,27 +9,8 @@ import {
   TransactionsTable,
 } from './styles'
 
-interface Transaction {
-  id: number
-  description: string
-  type: 'income' | 'outcome'
-  price: number
-  category: string
-  createdAt: string
-}
-
 export function Transactions() {
-  const [transactions, setTransactions] = useState<Transaction[]>([])
-  async function LoadTransactions() {
-    const response = await fetch('http://localhost:3000/transactions')
-    const data = await response.json()
-
-    setTransactions(data)
-  }
-
-  useEffect(() => {
-    LoadTransactions()
-  }, [])
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <div>
@@ -52,39 +34,6 @@ export function Transactions() {
                 </tr>
               )
             })}
-
-            <tr>
-              <td width="40%">Desevolvimento de site</td>
-              <td>
-                <PriceHighlight variant="income">R$ 12.000.00</PriceHighlight>
-              </td>
-              <td> Venda</td>
-              <td> 13/04/2022</td>
-            </tr>
-            <tr>
-              <td width="40%">Desevolvimento de site</td>
-              <td>
-                <PriceHighlight variant="income">R$ 12.000.00</PriceHighlight>
-              </td>
-              <td> Venda</td>
-              <td> 13/04/2022</td>
-            </tr>
-            <tr>
-              <td width="40%">Hamburger</td>
-              <td>
-                <PriceHighlight variant="outcome"> - R$ 59,00</PriceHighlight>
-              </td>
-              <td> Alimentação</td>
-              <td> 10/04/2022</td>
-            </tr>
-            <tr>
-              <td width="40%">Desevolvimento de site</td>
-              <td>
-                <PriceHighlight variant="income">R$ 12.000.00</PriceHighlight>
-              </td>
-              <td> Venda</td>
-              <td> 13/04/2022</td>
-            </tr>
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
