@@ -1,28 +1,44 @@
 {
-    "transactions": [{
-        "id": 1,
-        "description": "Desenvolvimento de Site",
-        "type": "income",
-        "category": "Venda",
-        "price": 14000,
-        "createdAt": "2022-09-23T18:29:58.679Z"
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de Site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2022-09-23T18:29:58.679Z"
     },
-     {
-            "id": 2,
-            "description": "Hamburger",
-            "type": "outcome",
-            "category": "Alimentação",
-            "price": 60,
-            "createdAt": "2022-09-23T18:29:58.679Z"
-        },
-        {
-            "id": 3,
-            "description": "Ignite Rockeseat",
-            "type": "outcome",
-            "category": "Educação",
-            "price": 2000,
-            "createdAt": "2022-09-23T18:29:58.679Z"
-        }
-    
-] 
+    {
+      "id": 2,
+      "description": "Hamburger",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 60,
+      "createdAt": "2022-09-23T18:29:58.679Z"
+    },
+    {
+      "id": 3,
+      "description": "Ignite Rockeseat",
+      "type": "outcome",
+      "category": "Educação",
+      "price": 2000,
+      "createdAt": "2022-09-23T18:29:58.679Z"
+    },
+    {
+      "description": "Freela",
+      "price": 100,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2022-09-28T19:09:13.577Z",
+      "id": 4
+    },
+    {
+      "description": "Pastel",
+      "price": 5,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2022-09-28T20:05:00.128Z",
+      "id": 5
+    }
+  ]
 }
